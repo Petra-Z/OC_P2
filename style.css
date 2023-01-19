@@ -2,10 +2,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    /* overflow: hidden; à regarder si c'est bien de le mettre comme ca */
 }
 
 body {
     width: 100%;
+    max-width: 1400px;
     height: 100%;
     margin: 0 auto;
     font-family: 'Raleway', 'Times New Roman', Times, serif;
@@ -14,12 +16,7 @@ body {
     color: #000000; 
 }
 
-p, li {
-    font-size: 1em;
-    font-weight: 400;
-}
-
-h2 {
+h1, h2 {
     font-size: 1.37em;
     font-weight: 700;
 }
@@ -27,6 +24,11 @@ h2 {
 h3 {
     font-size: 1em;
     font-weight: 700;
+}
+
+p, li {
+    font-size: 1em;
+    font-weight: 400;
 }
 
 main, header {
@@ -87,6 +89,7 @@ input[type=text]::placeholder {
     font-weight: 700;
     text-align: left;
     padding-left: 20px;
+    color: black;
 }  
 
 .search-bar button {
@@ -173,38 +176,12 @@ input[type=text]::placeholder {
 
 }
 
-.hotels {
-    width: 100%;
-    margin-top: 40px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-#hebergements {
-    width: 65%;
-    background: #f2f2f2;
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 40px;
-}
-
-#hebergements h3 {
-    font-size: 1em;
-    font-weight: 700;
-}
-
-.container-hebergements {
-    border-radius: 20px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 30px;
-}
-
+/*****************************************
+               cliquable
+*****************************************/
 .card-link {
-    display: block;
+    width: 30%;
+    display: inline-block;
 }
 
 .card-link:hover {
@@ -216,34 +193,84 @@ input[type=text]::placeholder {
     color: inherit;
 }
 
+/*****************************************
+               fin cliquable
+*****************************************/
+
+.hotels {
+    width: 100%;
+    height: 100%;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background: green;
+}
+
+#hebergements {
+    /* flex-grow: 0;
+    flex-shrink: 0; */
+    width: 65%;
+    /* flex-basis: 65%; */
+    height: 625px;
+    background: #f2f2f2;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column; /*je n'arrive pas à aligner les divs pour cela j'utilise padding plus bas*/    
+    padding: 40px;
+    background: teal;
+}
+
+.container-hebergements {
+    width: 100%;
+    height: 100%;
+    /* border-radius: 20px; */
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-content: space-around;
+    /* display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 25px; */
+    background: greenyellow;
+}
+
 .card-hebergements {
     width: 100%;
-    height: 200px;
+    min-height: 215px; /*pour eviter le debordement pour les largeurs intermediaires */
     border: 5px solid #ffffff;
     background: #ffffff;
     border-radius: 20px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.1);
+    overflow: hidden; /*à voir si je le garde ou pas ou je le mets au debut du fichier css*/
 }
 
 .card-hebergements img {
     width: 100%;
     height: 125px;
-    display: block;
+    /* display: block; */
     border-radius: 20px 20px 0 0;
     object-fit: cover;
-    flex-direction: column;
-    align-content: space-between;
+    /* flex-direction: column;
+    align-content: space-between; */
 }
 
 .body-card-hebergements {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
     margin-left: 15px;
-    margin-top: 5px;
-    line-height: 1em;
+    /* width: 100%;
+    margin-left: 5px;
+    margin-top: 5px; */
+    /* line-height: 1em; */
 }
 
 .body-card-hebergements p {
-    font-size: 0.87em;
-    margin-top: 5px;
+    font-size: 0.80em;
+    /* margin-top: 5px; */
 }
 
 .stars-card-hebergements {
@@ -258,80 +285,42 @@ input[type=text]::placeholder {
     margin-right: 1px;
 }
 
-.populaire {
+.populaires {
     width: 30%;
-    height: 625px;
-    background: #f2f2f2;
-    border-radius: 20px;
+    background: rosybrown;
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
+
 }
 
-.heading-populaire {
-    height: auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-left: 35px;
-    margin-top: 40px;
-}
-
-.heading-populaire h1 {
-    align-items: center;
-}
-
-.heading-populaire i {
-    margin-right: 40px; 
-    color: #0065fc;
-}
-
-.container-populaire {
+.container-populaires {
+    width: 100%;
+    height: 580px;
+    background: royalblue;
     display: flex;
     flex-direction: column;
-    gap: 35px; 
-    margin-top: 25px;
+    justify-content: space-around;
+
 }
 
-.card-populaire {
-    width: 80%;
+.card-populaires {
+    width: 300%;
     height: 145px;
-    background: #ffffff;
     display: flex;
     flex-direction: row;
+    background: white;
     overflow: hidden;
-    border: 5px solid #ffffff;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.1);
-    border-radius: 20px;
-    margin-left: 35px;
 }
 
-.card-populaire img {
-    width: 135px;
-    height: 145px;
+.card-populaires img {
+    width: 30%;
     object-fit: cover;
-    border-radius: 20px 0 0 20px;
 }
 
-.body-card-populaire {
-    margin-top: 15px;
-    margin-left: 10px;
-}
-
-.body-card-populaire p {
-    font-size: 0.88em;
-    margin-top: 10px;
-}
-
-.stars-card-populaire {
+.body-card-populaires {
     display: flex;
-    align-items: center;
-}
-
-.stars-card-populaire i {
-    color: #0065fc;
-    font-size: 0.65em;
-    margin-right: 1px;
-    margin-top: 40px;
+    flex-direction: column;
 }
 
 #activites {
@@ -368,7 +357,7 @@ input[type=text]::placeholder {
     height: 445px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.1);
     border-radius: 20px;
-    overflow: hidden
+    overflow: hidden;
 }
 
 .card-title {
@@ -447,6 +436,7 @@ footer h3 {
     }    
 
     .container-hebergements {
+        width: 100%;
         gap: 20px;
     }
     
