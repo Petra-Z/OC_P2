@@ -2,7 +2,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* overflow: hidden; à regarder si c'est bien de le mettre comme ca */
 }
 
 body {
@@ -35,15 +34,17 @@ p, li {
 main, header {
     margin: 50px;
 } 
+
 /********** EN TETE **********/
+
 nav {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-end; /*aligne le menu à droite une plus bas*/
 }
 
-nav a {
+.a-nav {
     color: inherit;
     text-decoration: none;
     padding: 20px 30px;
@@ -459,7 +460,7 @@ footer h3 {
         height: 100%;
     }
 
-    nav a {
+    .a-nav {
         margin-right: 0;
         margin-left: 50px;
     }
@@ -602,10 +603,28 @@ footer h3 {
         width: 100%;
         display: flex;
         flex-direction: column;
+        justify-content: center;
+        
     }
 
-    nav a {
-        padding: 30px 90px;
+    .logo {
+        width: 100%;
+        height: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .menu {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .a-nav {
+        width: 50%;
+        display: flex;
+        justify-content: center;
         border-bottom: 3px solid #f2f2f2;
     }
 
@@ -613,23 +632,6 @@ footer h3 {
         color: #0065fc;
         border-top: none;
         border-bottom: 3px solid #0065fc;
-    }
-
-    .logo {
-        margin-top: 20px;
-        margin-bottom: 40px;
-    } 
-
-    .menu span {
-        width: 100%;
-        display: block;
-    }
-
-    .menu {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        margin-bottom: 25px;
     }
 
     .trouver {
@@ -642,20 +644,11 @@ footer h3 {
     }
 
     .search-bar input {
-        width: 80%;
+        width: 70%;
     }
 
     .search-bar button {
         width: 50px;
-        height: 50px;
-        background: #0065fc;
-        font-weight: 700;
-        font-size: 1.12em;
-        color: white;
-        text-align: center;
-        border: none;
-        border-radius: 0px 15px 15px 0px;
-        cursor: pointer;
     }
 
     .button-text {
@@ -669,6 +662,11 @@ footer h3 {
     .filtres {
         width: 100%;
         margin-top: 35px; 
+        /* display: flex;
+        flex-flow: row wrap;
+        justify-content:space-between;
+        height: fit-content;
+        align-items: center;  */
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 10px;
