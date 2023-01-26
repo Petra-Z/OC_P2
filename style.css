@@ -1,3 +1,4 @@
+/********** NORMES **********/
 * {
     margin: 0;
     padding: 0;
@@ -7,7 +8,7 @@
 body {
     width: 100%;
     max-width: 1400px;
-    min-width: 360px;
+    min-width: 320px;
     height: 100%;
     margin: 0 auto;
     font-family: 'Raleway', 'Times New Roman', Times, serif;
@@ -35,7 +36,7 @@ main, header {
     margin: 40px;
 } 
 
-/********** EN TETE **********/
+/********** L'EN TETE **********/
 
 nav {
     display: flex;
@@ -60,11 +61,13 @@ nav img {
     height: 19px;
 }
 
-/*********** SECTION TROUVER **********/
+/*********** SECTION TROUVEZ **********/
 
-.trouver p {
+.trouvez p {
     margin-top: 10px;
 }
+
+/***********CHAMP DE RECHERCHE ***********/
 
 .search-bar {
     width: 25%;
@@ -96,6 +99,10 @@ input[type=text]::placeholder {
     color: black;
 }  
 
+input:focus::placeholder {
+    color: transparent;
+}  
+
 .search-bar button {
     width: 25%;
     height: 50px;
@@ -122,6 +129,8 @@ input[type=text]::placeholder {
     justify-content: center;
     align-items: center;
 }
+
+/************ FILTRES *************/
 
 .filtres {
     width: 70%;
@@ -158,6 +167,7 @@ input[type=text]::placeholder {
     background-color: #deebff;
 }
 
+/********** INFO i **********/
 
 .info {
     display: flex;
@@ -177,9 +187,9 @@ input[type=text]::placeholder {
     border-radius: 50%;
     text-align: center;
     line-height: 20px;
-    -webkit-text-stroke: 1px white;
-
 }
+
+/********** SECTION HOTELS **********/
 
 .hotels {
     width: 100%;
@@ -190,7 +200,7 @@ input[type=text]::placeholder {
     justify-content: space-between;
 }
 
-/********** HEBERGEMENTS A MARSEILLE **********/
+/********** SECTION HEBERGEMENTS **********/
 
 #hebergements {
     width: 67%;
@@ -199,7 +209,7 @@ input[type=text]::placeholder {
     border-radius: 20px;
     display: flex;
     flex-direction: column; /*je n'arrive pas à aligner les divs pour cela j'utilise padding plus bas*/ 
-    justify-content: space-between;   
+    justify-content: space-around;   
     padding: 35px;
 }
 
@@ -216,6 +226,8 @@ input[type=text]::placeholder {
     font-size: 1em;
     font-weight: 700;
 }
+
+/*********** CARD HEBERGEMENTS ***********/
 
 .card-hebergements {
     width: 100%;
@@ -236,18 +248,14 @@ input[type=text]::placeholder {
 }
 
 .card-link {
-    /* width: 30%; */
     display: block;
-}
-
-.card-link:hover {
-    transform: scale(1.05);
- }
-
-.hotels a {
     text-decoration: none;
     color: inherit;
 }
+
+.card-link:hover {
+    transform: scale(1.02);
+ }
 
 .card-hebergements img {
     width: 100%;
@@ -268,7 +276,6 @@ input[type=text]::placeholder {
 
 .body-card-hebergements p {
     font-size: 90%;
-    /* margin-top: 5px; */
 }
 
 .body-card-hebergements h3 {
@@ -292,7 +299,12 @@ input[type=text]::placeholder {
     color: #f2f2f2
 }
 
-/********** LES PLUS POPULAIRES **********/
+.afficher-plus a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/********** SECTION POPULAIRES **********/
  
 .populaires {
     width: 30%;
@@ -311,8 +323,6 @@ input[type=text]::placeholder {
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-end;
-    /* justify-content: space-between;
-    align-items:baseline; */
 }
 
 .heading-populaires i { /*a voir si on peut mettre blue sur tous les icons */
@@ -322,13 +332,14 @@ input[type=text]::placeholder {
 .container-populaires {
     width: 100%;
     height: 625px;
-    /* height: 500px; */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     margin-top: 20px;
 
 }
+
+/********* CARD POPULAIRES **********/
  
 .card-populaires {
     width: 100%;
@@ -346,7 +357,6 @@ input[type=text]::placeholder {
 .card-populaires img {
     width: 40%;
     object-fit: cover;
-    /* border-radius: 20px 0 0 20px; */
 }
 
 .body-card-populaires {
@@ -407,8 +417,10 @@ input[type=text]::placeholder {
 }
 
 .article:hover {
-    transform: scale(1.05);
+    transform: scale(1.02);
 }
+
+/********** CARD ACTIVITES **********/
 
 .card-activites {
     width: 100%;
@@ -433,12 +445,12 @@ input[type=text]::placeholder {
 
 footer {
     background-color: #F2F2F2;
-    width: 93%;
+    width: 94%;
     height: 35vh;
     display: flex;
     justify-content: space-around;
     list-style-type: none;
-    margin: 50px;
+    margin: 50px auto;
     margin-bottom: 0;
 }
 
@@ -457,7 +469,7 @@ footer h3 {
 
 /********** VERSION TABLETTE **********/
 
-@media only screen and (min-width: 768px) and ( max-width:992px)
+@media only screen and (max-width: 992px)
  {
     body {
         width: 100%;
@@ -497,13 +509,10 @@ footer h3 {
     #hebergements {
         width: 100%;
         height: 630px;
-        /* padding: 30px; */
-        /* gap: 20px; */
     }    
 
     .container-hebergements {
         width: 100%;
-        /* gap: 20px; */
     }
     
     .body-card-hebergements {
@@ -519,14 +528,8 @@ footer h3 {
         height: 280px;
     }
 
-    .heading-populaires {
-        /* margin-top: 20px;
-        margin-left: 20px; */
-    }
-
     .container-populaires {
         width: 100%;
-        /* margin: 30px auto; */
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -583,17 +586,16 @@ footer h3 {
     } 
 
     footer {
-        width: 87%;
+        width: 92%;
     }
 } 
 
 /********** VERSION MOBILE **********/
 
-@media only screen and (min-width: 320px) and (max-width: 767px) {
-    body {
+@media only screen and (min-width: 320px) and (max-width: 768px) {
+     body {
         width: 100%;
         height: 100%;
-        box-sizing: border-box;
     }
 
     main, header, footer {
@@ -608,7 +610,6 @@ footer h3 {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        
     }
 
     .logo {
@@ -623,10 +624,12 @@ footer h3 {
         width: 100%;
         display: flex;
         flex-direction: row;
+        justify-content: space-between;
     }
 
     .a-nav {
         width: 50%;
+        margin: 0; /*pour annuler le margin sur tablette*/
         display: flex;
         justify-content: center;
         border-bottom: 3px solid #f2f2f2;
@@ -638,7 +641,7 @@ footer h3 {
         border-bottom: 3px solid #0065fc;
     }
 
-    .trouver {
+    .trouvez {
         margin: 30px 20px;
     }
 
@@ -666,11 +669,6 @@ footer h3 {
     .filtres {
         width: 100%;
         margin-top: 35px; 
-        /* display: flex;
-        flex-flow: row wrap;
-        justify-content:space-between;
-        height: fit-content;
-        align-items: center;  */
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 10px;
@@ -692,6 +690,7 @@ footer h3 {
     
     .hotels {
         width: 100%;
+        height: 100%;
         display: flex;
         flex-direction: column-reverse;
     }
@@ -715,6 +714,8 @@ footer h3 {
     
     .container-populaires {
         width: 100%;
+        display: flex;
+        flex-direction: column;
         margin-top: 0;
         gap: 10px;
     }
@@ -734,17 +735,10 @@ footer h3 {
         background: white;
         display: flex;
         flex-direction: column;
-        /* padding: 0;
-        margin: 0; */
     }
     
-    /* .container-hebergements a {
-        width: 100%;
-    } */
-
     .heading-hebergements {
         width: 90%;
-        /* margin: 25px auto; */
     }
        
     .container-hebergements {
@@ -753,8 +747,6 @@ footer h3 {
         display: flex;
         flex-direction: column;
         justify-content: space-around;
-        /* gap: 15px;
-        border-radius: 0px; */
     }
 
     .container-hebergements a {
@@ -772,27 +764,19 @@ footer h3 {
     
     #activites {
         width: 100%;
-        margin: 0;
-        padding: 0;
-    }
-
-    #activites a {
-        text-decoration: none;
-        color: inherit;
     }
     
     #activites h2 {
-        max-width: 200px;
-        margin-left: 20px;
-        margin-bottom: -15px;
-        margin-top: 100px;
+        width: 25%;
+        margin: 30px 0 -15px 30px;
     }
     
     .container-activites {
         width: 100%;
+        height: 850px;
         display: flex;
         flex-direction: column;
-        gap: 25px;
+        justify-content: space-between;
     }
 
     .article {
@@ -830,5 +814,4 @@ footer h3 {
         padding: 0;
         margin-bottom: 30px;
     }
-
 }
